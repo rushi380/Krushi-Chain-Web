@@ -77,3 +77,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 Contact
 For any questions, please open an issue in the repository.
+#In Web Photo Demos - 
+<img width="1488" height="850" alt="Screenshot 2025-08-24 111813" src="https://github.com/user-attachments/assets/2116565f-1896-4f96-a645-21f70042b09a" />
+<img width="1475" height="839" alt="Screenshot 2025-08-24 111836" src="https://github.com/user-attachments/assets/3ef28687-7084-4eba-839f-321b82b61dc6" />
+<img width="1505" height="902" alt="Screenshot 2025-08-24 111509" src="https://github.com/user-attachments/assets/fad33e0d-eced-44b9-bf3d-5332fb54c0f8" />
+<img width="1502" height="783" alt="Screenshot 2025-08-24 111725" src="https://github.com/user-attachments/assets/c8f6b4b8-f9e4-44ba-a701-bc500723ebf9" />
+
