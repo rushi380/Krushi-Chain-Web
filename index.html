@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 KrushiChain MVP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    <link rel="stylesheet" href="/style.css"> 
+     <script src="/action.js"></script>
+</head>
+<body>
+    <div class="container">
+    
+        <div class="header">
+            <div class="aptos-badge">⚡ Powered by Aptos</div>
+            <h1>🚀 KrushiChain</h1>
+            <p>Blockchain-Powered Agriculture Platform on Aptos</p>
+        </div>
+        
+        <div class="wallet-section">
+            <h3>🔗 Aptos Wallet Connection</h3>
+            <div id="walletStatus">
+                <button class="btn aptos-btn" onclick="connectWallet()">Connect Aptos Wallet</button>
+            </div>
+            <div id="walletInfo" class="wallet-info" style="display:none;"></div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('register')">🌱 Land Register</button>
+            <button class="tab" onclick="showSection('qr')">📱 QR Scanner</button>
+            <button class="tab" onclick="showSection('iot')">📊 IoT Data</button>
+            <button class="tab" onclick="showSection('subsidy')">💰 Subsidy</button>
+            <button class="tab" onclick="showSection('blockchain')">⛓️ Aptos Chain</button>
+        </div>
+        
+        <div class="content">
+            <!-- Land Registration -->
+            <div id="register" class="section active">
+                <h2>🌱 शेती नोंदणी (Land Registration on Aptos)</h2>
+                <div class="form-group">
+                    <label>शेतकरी नाव (Farmer Name):</label>
+                    <input type="text" id="farmerName" placeholder="आपले नाव टाका">
+                </div>
+                <div class="form-group">
+                    <label>जमीन क्षेत्र (Land Area in acres):</label>
+                    <input type="number" id="landArea" placeholder="एकर मध्ये">
+                </div>
+                <div class="form-group">
+                    <label>पीक प्रकार (Crop Type):</label>
+                    <select id="cropType">
+                        <option value="">निवडा</option>
+                        <option value="wheat">गहू</option>
+                        <option value="rice">तांदूळ</option>
+                        <option value="cotton">कापूस</option>
+                        <option value="sugarcane">ऊस</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>स्थान (Location):</label>
+                    <input type="text" id="location" placeholder="गाव, तालुका">
+                </div>
+                <button class="btn aptos-btn" onclick="registerLandOnAptos()" id="registerBtn">
+                    🔗 Aptos Blockchain वर नोंदणी करा
+                </button>
+                
+                <div id="registeredLands"></div>
+            </div>
+            
+            <!-- QR Scanner -->
+            <div id="qr" class="section">
+                <h2>📱 QR Code स्कॅनर (Aptos Verified)</h2>
+                <p>Aptos वर नोंदणी केलेल्या जमिनी:</p>
+                <div id="qrCodes"></div>
+            </div>
+            
+            <!-- IoT Data -->
+            <div id="iot" class="section">
+                <h2>📊 IoT Sensor Data (Stored on Aptos)</h2>
+                <div class="sensor-data">
+                    <div class="sensor-card">
+                        <h3>🌡️ तापमान</h3>
+                        <div class="sensor-value" id="temperature">28°C</div>
+                    </div>
+                    <div class="sensor-card">
+                        <h3>💧 आर्द्रता</h3>
+                        <div class="sensor-value" id="humidity">65%</div>
+                    </div>
+                    <div class="sensor-card">
+                        <h3>🌱 मातीची आर्द्रता</h3>
+                        <div class="sensor-value" id="soilMoisture">45%</div>
+                    </div>
+                    <div class="sensor-card">
+                        <h3>☀️ प्रकाश</h3>
+                        <div class="sensor-value" id="light">850 lux</div>
+                    </div>
+                </div>
+                <button class="btn" onclick="getGuidance()">📢 मार्गदर्शन मिळवा</button>
+                <button class="btn voice-btn" onclick="speakGuidance()">🔊 आवाजात ऐका</button>
+                <button class="btn aptos-btn" onclick="storeSensorDataOnAptos()">⚡ Aptos वर Store करा</button>
+                <div id="guidance"></div>
+            </div>
+            
+            <!-- Subsidy -->
+            <div id="subsidy" class="section">
+                <h2>💰 अनुदान तपासणी (Aptos Smart Contract)</h2>
+                <div class="subsidy-check">
+                    <h3>Aptos Move Smart Contract</h3>
+                    <p>आपली पात्रता Aptos वर तपासली जात आहे...</p>
+                    <button class="btn aptos-btn" onclick="checkSubsidyOnAptos()">⚡ Aptos Contract Execute करा</button>
+                </div>
+                <div id="subsidyResult"></div>
+            </div>
+            
+            <!-- Blockchain -->
+            <div id="blockchain" class="section">
+                <h2>⛓️ Aptos Blockchain Records</h2>
+                <div class="aptos-tx">
+                    <strong>Aptos Network:</strong> Testnet<br>
+                    <strong>Contract Address:</strong> 0x1::krushi_chain::LandRegistry<br>
+                    <strong>Move Module:</strong> krushi_chain.move
+                </div>
+                <div class="transaction-list" id="transactions">
+                    <div class="blockchain-record aptos-record">
+                        <strong>Aptos Genesis Block</strong><br>
+                        Network: Aptos Testnet<br>
+                        Time: System Initialized<br>
+                        Contract Deployed: ✅
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
